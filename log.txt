@@ -3722,6 +3722,7 @@ Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No q
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
 	... 41 common frames omitted
 
+<<<<<<< HEAD
 2017-03-30 09:06:32.959  WARN 2644 --- [main] s.c.a.AnnotationConfigApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'helpInfoRepository': Invocation of init method failed; nested exception is org.springframework.data.mapping.PropertyReferenceException: No property destination found for type HelpInfo!
 2017-03-30 09:06:33.010 ERROR 2644 --- [main] o.s.boot.SpringApplication               : Application startup failed
 
@@ -6859,3 +6860,5 @@ Caused by: org.springframework.data.mapping.PropertyReferenceException: No prope
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624) ~[spring-beans-4.3.7.RELEASE.jar:4.3.7.RELEASE]
 	... 43 common frames omitted
 
+=======
+>>>>>>> 16b660405d6e1fae826906c2a1afdc3e3fb5f1da
