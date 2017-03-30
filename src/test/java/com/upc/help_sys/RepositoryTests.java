@@ -11,8 +11,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.sql.Timestamp;
+import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -44,6 +46,15 @@ public class RepositoryTests {
     public void findById() {
         helpInfo = helpInfoRepository.findOne(1);
         System.out.println(helpInfo);
+    }
+
+    @Test
+    public void clear() {
+        List<HelpInfo> list = new ArrayList<HelpInfo>();
+        list = helpInfoRepository.findAll();
+        for (HelpInfo helpInfo : list) {
+            helpInfoRepository.delete(helpInfo);
+        }
     }
 
 }
