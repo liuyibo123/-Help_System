@@ -1,7 +1,6 @@
 package com.upc.help_sys;
 
 
-import com.upc.help_sys.dao.HelpInfo;
 import com.upc.help_sys.dao.HelpInfoRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
