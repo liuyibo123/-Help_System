@@ -11,7 +11,7 @@ CREATE TABLE HELP_INFO(
   accepter_id INT ,                     #接单人编号
   deadline TIMESTAMP,                   #最迟完成时间
   state_num INT                         #状态码
-)
+);
   ## 状态码:
   ##  0 . 未接单 未完成 未评价
   ##  1 . 接单 未完成 未评价

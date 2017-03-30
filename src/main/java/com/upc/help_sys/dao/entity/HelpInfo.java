@@ -101,11 +101,18 @@ public class HelpInfo {
 
 
     public Timestamp getDeadline() {
-        return deadline;
+        if (deadline == null) {
+            return null;
+        }
+        return (Timestamp) deadline.clone();
     }
 
     public void setDeadline(Timestamp deadline) {
-        this.deadline = deadline;
+        if (deadline == null) {
+            this.deadline = null;
+        } else {
+            this.deadline = (Timestamp) deadline.clone();
+        }
     }
 
     public int getState_num() {
