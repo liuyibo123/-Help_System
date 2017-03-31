@@ -33,7 +33,7 @@ public class RepositoryTests {
         helpInfo.setCategory(2);
         helpInfo.setDeadline(new Timestamp(new Date().getTime()));
         helpInfo.setState_num(2);
-        helpInfo.setContent("帮我买手抓饼,5元");
+        helpInfo.setContent("帮我买手抓饼中国石油大学,5元");
         helpInfo.setCreator_id(1);
         helpInfo.setDestination_from("玉兰");
         helpInfo.setDestination_to("15号楼");
