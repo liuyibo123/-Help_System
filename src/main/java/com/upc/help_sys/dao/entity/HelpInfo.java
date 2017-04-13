@@ -25,7 +25,7 @@ public class HelpInfo {
     private float tip;//悬赏金额
     private int accepter_id;//接单人id
     private int creator_id;//创建人id
-    private Timestamp deadline;//最迟完成时间
+    private String deadline;//最迟完成时间
     private int state_num;//状态字段
 
     public int getNeed_person() {
@@ -79,6 +79,23 @@ public class HelpInfo {
         return destination_to;
     }
 
+    @Override
+    public String toString() {
+        return "HelpInfo{" +
+                "id=" + id +
+                ", category=" + category +
+                ", content='" + content + '\'' +
+                ", destination_from='" + destination_from + '\'' +
+                ", destination_to='" + destination_to + '\'' +
+                ", tip=" + tip +
+                ", accepter_id=" + accepter_id +
+                ", creator_id=" + creator_id +
+                ", deadline=" + deadline +
+                ", state_num=" + state_num +
+                ", need_person=" + need_person +
+                '}';
+    }
+
     public void setDestination_to(String destination_to) {
         this.destination_to = destination_to;
     }
@@ -100,19 +117,12 @@ public class HelpInfo {
     }
 
 
-    public Timestamp getDeadline() {
-        if (deadline == null) {
-            return null;
-        }
-        return (Timestamp) deadline.clone();
+    public String getDeadline() {
+        return deadline;
     }
 
-    public void setDeadline(Timestamp deadline) {
-        if (deadline == null) {
-            this.deadline = null;
-        } else {
-            this.deadline = (Timestamp) deadline.clone();
-        }
+    public void setDeadline(String deadline) {
+        this.deadline = deadline;
     }
 
     public int getState_num() {

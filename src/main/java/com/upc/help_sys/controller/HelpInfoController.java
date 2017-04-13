@@ -2,36 +2,35 @@ package com.upc.help_sys.controller;
 
 import com.upc.help_sys.dao.HelpInfoRepository;
 import com.upc.help_sys.dao.entity.HelpInfo;
-import com.upc.help_sys.utils.MyGson;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 /**
- * Created by Liuyibo on 2017/3/30.
+ * Created by Liuyibo on 2017/4/7.
  */
 @RestController
+@RequestMapping("/helpinfo")
 public class HelpInfoController {
     @Autowired
-    HelpInfoRepository helpInfoRepository;
+    HelpInfoRepository repository;
 
-    @RequestMapping("/getall")
-    public String getAll() {
-        List<HelpInfo> list = helpInfoRepository.findAll();
-        return MyGson.toJson(list);
+    @RequestMapping("/get")
+    public String get() {
+        return "hello yarong";
     }
 
+    @RequestMapping("/all")
+    public List<HelpInfo> findAll() {
+        return repository.findAll();
+    }
     @RequestMapping("/addnew")
-    public String addNew(String json) {
-        System.out.println("进入addnew");
-        HelpInfo helpInfo = MyGson.fromJson(json, HelpInfo.class);
-        System.out.println(json);
-        System.out.println(helpInfo.getContent());
-        helpInfoRepository.save(helpInfo);
-        System.out.println("save success");
-        return "success";
+    public void addnew(@RequestBody HelpInfo helpInfo) {
+        repository.save(helpInfo);
     }
 }

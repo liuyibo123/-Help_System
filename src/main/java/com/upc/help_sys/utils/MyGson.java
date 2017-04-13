@@ -9,7 +9,7 @@ import com.google.gson.Gson;
  * toJson 把对象转换成json字符串
  * fromJson 把字符串转换成指定类型的对象
  *
- * @param t 泛型类
+ *
  */
 public class MyGson {
     private static Gson gson = null;

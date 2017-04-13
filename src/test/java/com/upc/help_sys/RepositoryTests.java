@@ -31,7 +31,7 @@ public class RepositoryTests {
     public void insert() {
         helpInfo.setAccepter_id(3);
         helpInfo.setCategory(2);
-        helpInfo.setDeadline(new Timestamp(new Date().getTime()));
+        helpInfo.setDeadline("明天中午12点");
         helpInfo.setState_num(2);
         helpInfo.setContent("帮我买手抓饼中国石油大学,5元");
         helpInfo.setCreator_id(1);
@@ -43,8 +43,8 @@ public class RepositoryTests {
 
     @Test
     public void findById() {
-        helpInfo = helpInfoRepository.findOne(1);
-        System.out.println(helpInfo);
+        helpInfo = helpInfoRepository.findOne(59);
+        System.out.println(MyGson.toJson(helpInfo));
     }
 
     @Test

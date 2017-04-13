@@ -21,7 +21,6 @@ public class UtilsTests {
         String json = MyGson.toJson(helpInfo);
         System.out.println(json);
     }
-
     @Test
     public void testMyGson_fromJson() {
         HelpInfo helpInfo;
