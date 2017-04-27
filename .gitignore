@@ -23,3 +23,7 @@ dist/
 nbdist/
 .nb-gradle/
 src/main/java/com/upc/help_sys/service/serviceimpl/
+/log.txt
+/mvnw.cmd
+/mvnw
+/target/
