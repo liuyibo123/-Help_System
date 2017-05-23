@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
- * Created by Liuyibo on 2017/4/24.
+ * Created by Liuyibo on 2017/5/9.
  */
 @Repository
 public interface ExpressRepository extends JpaRepository<Express, Integer> {

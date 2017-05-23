@@ -1,34 +1,36 @@
 package com.upc.help_sys.dao.entity;
 
-
+import com.upc.help_sys.utils.TimeUtil;
 import org.springframework.stereotype.Component;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 /**
- * Created by Liuyibo on 2017/4/23.
+ * Created by Liuyibo on 2017/5/9.
  */
 @Entity
 @Component
 public class MainTable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int id;
-
-    String content;
-    String destination_from;
-    String destination_to;
-    int needperson;
-    float tip;
-    int askid;
-    int helperid;
-    String tname;
-    int tid;
-    Timestamp pubtime;
-    Timestamp accepttime;
-    int nowperson;
-    int state;
+    private int id;
+    private String content;
+    private int pub_person;
+    private int catagory;
+    private int accept_person;
+    private String pub_time = TimeUtil.getCurrentTime();
+    private String accept_time = null;
+    private int state;
+    private String pub_loc;
+    private String help_loc;
+    private float tip;
 
     public int getId() {
         return id;
@@ -46,104 +48,44 @@ public class MainTable {
         this.content = content;
     }
 
-    public String getDestination_from() {
-        return destination_from;
+    public int getPub_person() {
+        return pub_person;
     }
 
-    public void setDestination_from(String destination_from) {
-        this.destination_from = destination_from;
+    public void setPub_person(int pub_person) {
+        this.pub_person = pub_person;
     }
 
-    public String getDestination_to() {
-        return destination_to;
+    public int getCatagory() {
+        return catagory;
     }
 
-    public void setDestination_to(String destination_to) {
-        this.destination_to = destination_to;
+    public void setCatagory(int catagory) {
+        this.catagory = catagory;
     }
 
-    public int getNeedperson() {
-        return needperson;
+    public int getAccept_person() {
+        return accept_person;
     }
 
-    public void setNeedperson(int needperson) {
-        this.needperson = needperson;
+    public void setAccept_person(int accept_person) {
+        this.accept_person = accept_person;
     }
 
-    public float getTip() {
-        return tip;
+    public String getPub_time() {
+        return pub_time;
     }
 
-    public void setTip(float tip) {
-        this.tip = tip;
+    public void setPub_time(String pub_time) {
+        this.pub_time = pub_time;
     }
 
-    public int getAskid() {
-        return askid;
+    public String getAccept_time() {
+        return accept_time;
     }
 
-    public void setAskid(int askid) {
-        this.askid = askid;
-    }
-
-    public int getHelperid() {
-        return helperid;
-    }
-
-    public void setHelperid(int helperid) {
-        this.helperid = helperid;
-    }
-
-    public String getTname() {
-        return tname;
-    }
-
-    public void setTname(String tname) {
-        this.tname = tname;
-    }
-
-    public int getTid() {
-        return tid;
-    }
-
-    public void setTid(int tid) {
-        this.tid = tid;
-    }
-
-    public Timestamp getPubtime() {
-        if (pubtime == null)
-            return null;
-        else
-            return (Timestamp) pubtime.clone();
-    }
-
-    public void setPubtime(Timestamp pubtime) {
-        if (pubtime == null)
-            this.pubtime = null;
-        else
-            this.pubtime = (Timestamp) pubtime.clone();
-    }
-
-    public Timestamp getAccepttime() {
-        if (accepttime == null)
-            return null;
-        else
-            return (Timestamp) accepttime.clone();
-    }
-
-    public void setAccepttime(Timestamp accepttime) {
-        if (accepttime == null)
-            this.accepttime = null;
-        else
-            this.accepttime = (Timestamp) accepttime.clone();
-    }
-
-    public int getNowperson() {
-        return nowperson;
-    }
-
-    public void setNowperson(int nowperson) {
-        this.nowperson = nowperson;
+    public void setAccept_time(String accept_time) {
+        this.accept_time = accept_time;
     }
 
     public int getState() {
@@ -152,5 +94,29 @@ public class MainTable {
 
     public void setState(int state) {
         this.state = state;
+    }
+
+    public String getPub_loc() {
+        return pub_loc;
+    }
+
+    public void setPub_loc(String pub_loc) {
+        this.pub_loc = pub_loc;
+    }
+
+    public String getHelp_loc() {
+        return help_loc;
+    }
+
+    public void setHelp_loc(String help_loc) {
+        this.help_loc = help_loc;
+    }
+
+    public float getTip() {
+        return tip;
+    }
+
+    public void setTip(float tip) {
+        this.tip = tip;
     }
 }
