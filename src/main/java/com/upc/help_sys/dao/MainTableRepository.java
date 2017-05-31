@@ -6,6 +6,8 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * Created by Liuyibo on 2017/5/9.
  */
@@ -31,4 +33,5 @@ public interface MainTableRepository extends JpaRepository<MainTable, Integer> {
     @Modifying
     void updateHelp_loc(String help_loc, int id);
 
+    List<MainTable> findByContentLike(String querylike);
 }

@@ -3,6 +3,7 @@ package com.upc.help_sys.controller;
 import com.google.gson.Gson;
 import com.upc.help_sys.dao.MainTableRepository;
 import com.upc.help_sys.dao.entity.MainTable;
+import com.upc.help_sys.utils.MyGson;
 import com.upc.help_sys.utils.MyResponse;
 import org.jboss.jandex.Main;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,15 @@ public class MainTableController {
     @Autowired
     MyResponse response;
 
+    @RequestMapping("findbycontent")
+    public List<MainTable> findByContent(String query) {
+        System.out.println(query);
+        String querylike = "%" + query + "%";
+        List<MainTable> list = repository.findByContentLike(querylike);
+        String listjson = MyGson.toJson(list);
+        System.out.println(listjson);
+        return list;
+    }
     @RequestMapping("find_all")
     public List<MainTable> findall() {
         return repository.findAll();
